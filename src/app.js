@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'; // useEffect is basically a function that happens when the code starts. It is similar to ComponenDidMount. It also has componentDidUpdate
 import alanBtn from '@alan-ai/alan-sdk-web';
 
+import NewsCards from './components/NewsCards/NewsCards';
 
 
 const alanKey = '8a536e685a0983b6e1ade461bd1084a22e956eca572e1d8b807a3e2338fdd0dc/stage';
 const App = () => {
 
-    const [newsArticles , setNewsArticles] = useState([]);
+    const [newsArticles , setNewsArticles] = useState([]); // ????
 
     useEffect(() => {
         alanBtn({
@@ -26,6 +27,8 @@ const App = () => {
     return (
         <div>
             <h1>Alan AI news Application</h1>
+
+            <NewsCards articles={newsArticles}/>
         </div>
     );
 }
